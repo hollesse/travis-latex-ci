@@ -25,7 +25,7 @@ before_script:
 script: 
   - pdflatex Example.tex
   #- biber Example
-  - Rscript CheckBiber.R
+  #- Rscript CheckBiber.R
   - pdflatex Example.tex
 
 
