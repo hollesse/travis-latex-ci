@@ -1,0 +1,101 @@
+%!TEX root = ../main.tex
+%!TEX program = xelatex
+%!BIB program = biber
+
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   LOAD GENERALY NEEDED / USEFULL PACKAGES
+%%     specific Packages only needed for the Layout are loaded inside layout.tex
+%% -------------------------------------------------------------------------------------------------
+
+%% SOME FINE HELPERS:
+\usepackage{polyglossia}  % i18n
+
+\usepackage{lipsum}  % placeholder text
+
+\usepackage{calc}  % provides arithmetics on \set­counter, \ad­dto­counter, \setlength, and \ad­dtolength
+
+\usepackage[utf8]{inputenc}  % german umlaute
+
+
+%% EYE CANDY:
+\usepackage{marvosym}  % symbols
+
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+
+%% LAYOUTING:
+\usepackage{scrlayer-scrpage}
+
+\usepackage{setspace}  % set spacing after paragraphs
+                       %   providees \doublespacing, \onehalfspacing, \singlespacing and
+                       %    \setstretch{baselinestretch}
+
+\usepackage{tabto} % add tabs to a specific length
+\usepackage{xhfill}
+
+\usepackage{changepage}
+
+\usepackage{enumerate}  % numbered lists
+
+
+%% MATHEMATICS AND ENIGNEERING:
+\usepackage{amsmath,amssymb,amsfonts}  % nicer mathematic environments and symbols
+
+\usepackage{gensymb}  % ensures the display of some unit-symbols
+                      %   provides \degree, \celsius, \perthousand, \micro and \ohm
+
+
+%% TABLES:
+\usepackage{longtable,tabu,supertabular}  % makes tables stretching over multiple pages possible
+
+\usepackage{colortbl}  % use colors in tables
+
+\usepackage{booktabs}  % better horizontal lines in tables 
+                       %    provides \toprule[<breite>], \midrule[<breite>], 
+                       %     \cmidrule[<breite>](trim){a-b} and \bottomrule 
+\usepackage[newcommand]{ragged2e}  % align and hypenate text in ragging environments nicer
+\usepackage{multirow}  % merge several cells over rows or columns
+                       %    provides \multirow{Zeilen}{Breite}{Inhalt} and  
+                       %     \multicolumn{Spalten}{Ausrichtung}{Inhalt}
+
+
+%% CITATIONS AND REFERENCES:
+\usepackage[autostyle]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+\usepackage[backend=biber, style=numeric]{biblatex}
+
+\usepackage[footnote]{acronym}
+
+\usepackage[hidelinks]{hyperref}  % removes colored boxes around hyperlinks
+
+
+%% GRAPHICS:
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\graphicspath{{./resources/images/}}
+
+\usepackage{tikz}  % graph drawing inside LaTeX
+\usetikzlibrary{matrix}
+\usepackage{pgfplots}  % draw 2D and 3D plots inisde LaTeX
+\pgfplotsset{compat=newest}
+
+\usepackage{pdfpages}  % include pages which are stored in external pdf Files
+                       %  provides \includepdf[pages=<range or ->]{<filename>}
+
+\usepackage{float}  % eases work with floating objects (e.g. figures and tables)
+\usepackage{caption}  % customize captions for floating environments
+
+
+%% SOURCE CODE LISTINGS:
+\usepackage{listings} 
+
+\input{userdata/lib/listing/html5_language}
+\input{userdata/lib/listing/javascript_language}
+
+
+
+% Keep this as the very last item!
+\usepackage{scrhack}  % smooths edges at playing along with KOMA-Script

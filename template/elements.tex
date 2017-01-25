@@ -1,0 +1,69 @@
+%!TEX root = ../main.tex
+%!TEX program = xelatex
+%!BIB program = biber
+
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   DEFINE CUSTOM, HELPFUL ELEMENTS
+%% -------------------------------------------------------------------------------------------------
+
+% totally preventing pagebreaks inside this environement
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+
+% for marking sections which are incomplete with a ToDo-Message
+\newcommand{\incompletemarker}[1]{
+    \begin{quote}
+        \colorbox{SupportingDeepOrange}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize ToDo: #1}} }
+    \end{quote} 
+}
+
+
+% create fancy tables
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+\newcommand\stripedtablecaptionsave{} % makes sure \stripedtablecaptionsave is not in use
+\newcommand\stripedtablelabelsave{} % makes sure \stripedtablecaptionsave is not in use
+\newenvironment{stripedtable}[5]
+    {
+        \def\stripedtablecaptionsave{#1}%copies the value of the arguments for save use later
+        \def\stripedtablelabelsave{#2}%copies the value of the arguments for save use later
+
+        \begin{table}[htbp]
+            \begin{center}
+                \rowcolors{2}{#3!15}{white}
+                \begin{tabular}{$#4}
+                    \arrayrulecolor{#3}
+                    \toprule
+                    \rowstyle{\bfseries}#5\\
+                    \midrule
+    }
+    {
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+            \vspace{-0.5cm}
+            \caption{\stripedtablecaptionsave}
+            \stripedtablelabelsave
+        \end{table}
+    }
+
+\newenvironment{stripedacenttable}[4]
+    {
+        \begin{stripedtable}{#1}{#2}{TertiaryAccentColor!15!Gray!75!White}{#3}{#4}
+    }
+    {
+        \end{stripedtable}
+    }
+
+
+% put sources more easily into your footnotes
+\newcommand{\footnotecite}[1]{\footnote{\emph{\cite{#1}}}}

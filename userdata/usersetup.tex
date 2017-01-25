@@ -1,0 +1,130 @@
+%!TEX root = ../main.tex
+%!TEX program = xelatex
+%!BIB program = biber
+
+%% -------------------------------------------------------------------------------------------------
+%%   SETUP OF CUSTOM DOCUMENT-PROPERTIES
+%%     refer to the readme for further information about how to use this file
+%% -------------------------------------------------------------------------------------------------
+
+% Choose which type of report you want to write:
+\usepackage[
+    Internship,			% Internship template
+    % Study,				% Study template
+    % Bachelor,			% Bachelor template
+    DbSystelTheme,			% DB Systel Theme (with DB Systel Claim and special colors)
+    %DefaultTheme,			% DB Theme
+    %DbFont
+]{optional}
+
+\newcommand{\contentFolderName}{ExampleContent}
+
+\graphicspath{{./userdata/\contentFolderName/resources/images/}}
+
+\addbibresource{userdata/\contentFolderName/resources/references.bib} 
+
+% Uncomment if you need a Confidentiality Clause:
+\newcommand{\activateconfidentialityclause}{def}
+
+% uncomment if you need a second line for the departmentname
+%\newcommand{\activatelongdepartment}{def}
+
+% Choose your language by uncommenting the variant you like:
+    % english with german parts
+    %\setdefaultlanguage{english}
+    %\setotherlanguage[variant=german, latesthyphen=true]{german}
+%  or
+    % fully german
+    \setdefaultlanguage[variant=german, latesthyphen=true]{german}
+
+
+% Place your information into the following fields:
+\newcommand{\studentname}{Max Mustermann}
+\newcommand{\matrikelno}{123456}
+\newcommand{\kurs}{MA-TINF...}
+
+\newcommand{\companyname}{DB Systel GmbH}
+\newcommand{\companylocation}{Frankfurt am Main}
+
+\newcommand{\studiengang}{Angewandte Informatik}
+\newcommand{\dhbwDE}{Dualen Hochschule Baden-Württemberg Mannheim}
+\newcommand{\dhbwEN}{Baden-Wuerttemberg Cooperative State University Mannheim}
+
+\newcommand{\reporttitle}{Wie erstelle ich einen sch{\"o}nen Praxisbericht}
+
+\newcommand{\timerange}{... Wochen}
+\newcommand{\handoverdate}{01.01.1970}
+\newcommand{\city}{...}
+
+
+% Place your information into the block which corresponds to the type you choose at the beginning:
+\opt{Internship}{
+    \newcommand{\reportmodule}{T...000}
+    \newcommand{\reportstart}{01.01.1970}
+    \newcommand{\reportend}{01.01.1970}
+	\newcommand{\department}{F.I ...}
+	\newcommand{\longdepartment}{...}
+	\newcommand{\companymanager}{...}
+}
+\opt{Study}{
+    \newcommand{\reportsemester}{...th}
+    \newcommand{\prof}{Prof. Dr. ...}
+}
+\opt{Bachelor}{
+    \newcommand{\academicdegree}{Bachelor of Science}
+    \newcommand{\companymanager}{M. Sc. ...}
+    \newcommand{\prof}{Prof. Dr. ...}
+}
+
+% PrimaryAccentColor DB Systel Gelbgruen or Deutsche Bahn Rot
+\opt{DbSystelTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{120, 190, 20}}
+\opt{DefaultTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{240, 20, 20}}
+
+% Uncomment if you want to have labels like "Table 1.1"/"Tabelle 1.1" in front of your Entries inside
+%  the LoF / LoT / LoL (instead of just the numbers):
+%\newcommand{\nolabelsinsideIndicies}{def}
+
+% Uncomment if you want to have your figures, tables and code listings numbered with "absolute"
+%  numbers, i.e. without the chapter number:
+%\newcommand{\absolutecaptionnumbers}{def}
+
+% Uncomment if you want to have the numbering of your footnotes continue through your whole document,
+%  i.e. they should not be resetted at the start of a new chapter:
+%\newcommand{\absolutecaptionnumbers}{def}
+
+
+% Deutsche Bahn Dunkelgrau & Grau
+\definecolor{SecondaryAccentColor}	{RGB}{100, 105, 115}
+\definecolor{TertiaryAccentColor} 	{RGB}{135, 140, 150}
+
+% Deutsche Bahn primary colors
+\definecolor{DbRot}     		{RGB}{240, 20, 20}
+\definecolor{DbBlau}     		{RGB}{10, 30, 110}
+\definecolor{DbDunkelgrau}	{RGB}{100, 105, 115}
+\definecolor{DbGrau}     		{RGB}{135, 140, 150}
+\definecolor{DbHellgrau}     	{RGB}{200, 205, 210}
+\definecolor{DbWeissgrau}     	{RGB}{225, 230, 235}
+
+% Deutsche Bahn secondary colors
+\definecolor{DbGelb}     		{RGB}{255, 205, 0}
+\definecolor{DbSonnengelb}     	{RGB}{255, 175, 0}
+\definecolor{DbVerkehrsorange}	{RGB}{255, 140, 0}
+\definecolor{DbGelbgruen}     	{RGB}{120, 190, 20}
+\definecolor{DbGrasgruen}     	{RGB}{0, 170, 0}
+\definecolor{DbSignalblau}     	{RGB}{0, 100, 200}
+\definecolor{DbCurrygelb}     	{RGB}{160, 130, 0}
+\definecolor{DbOrangebraun}   	{RGB}{175, 90, 0}
+\definecolor{DbRubinrot}     	{RGB}{165, 5, 45}
+\definecolor{DbPurpurviolett}  	{RGB}{95, 20, 120}
+\definecolor{DbVerkehrsblau}  	{RGB}{0, 100, 140}
+\definecolor{DbOpalgruen}     	{RGB}{0, 110, 115}
+\definecolor{DbTuerkisgruen}  	{RGB}{0, 120, 65}
+\definecolor{DbFarngruen}     	{RGB}{90, 110, 0}
+
+% If you want to, you can also change the value of the supporting colors:
+\definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}
+\definecolor{SupportingOrange}    {rgb}{0.97, 0.66, 0.15}
+\definecolor{SupportingDeepOrange}{rgb}{0.93, 0.30, 0.18}
+\definecolor{SupportingYellow}    {rgb}{0.99, 0.98, 0.12}
+\definecolor{SupportingCherry}    {rgb}{0.80, 0.00, 0.34}
+\definecolor{SupportingPurple}    {rgb}{0.43, 0.17, 0.55}
