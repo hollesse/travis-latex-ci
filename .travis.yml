@@ -24,10 +24,10 @@ before_script:
 
 script: 
   - Rscript -e "knitr::knit('Example.Rnw')"
-  - pdflatex Example.tex
+  - xelatex Example.tex
   - biber Example
   - Rscript CheckBiber.R
-  - pdflatex Example.tex
+  - xelatex Example.tex
 
 
 #after_success: tools/deploy.sh
