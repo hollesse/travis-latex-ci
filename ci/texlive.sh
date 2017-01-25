@@ -90,7 +90,8 @@ tlmgr install   \
   was			\
   supertabular	\
   pgfplots		\
-  optional
+  optional		\
+  fontawe­some
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
