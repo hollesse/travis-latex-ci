@@ -16,7 +16,6 @@
 
 %% FONTS:
 \usepackage{fontspec}
-\defaultfontfeatures{Path = /userdata/lib/fonts/}
 \setmainfont{Karma-Regular}[
     Path = userdata/lib/fonts/,
     Extension = .otf,
@@ -29,7 +28,7 @@
 ]
 
 \RequirePackage{fontawesome}
-\newfontfamily\FA{FontAwesome}
+\newfontfamily\FA[Path=/userdata/lib/fonts/]{FontAwesome}
 
 % set \emph to be bold text:
 \let\emph\relax
