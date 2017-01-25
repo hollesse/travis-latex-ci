@@ -31,18 +31,6 @@ script:
 
 
 #after_success: tools/deploy.sh
-=======
-- wget "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/Linux/biber-linux_x86_64.tar.gz"
-- tar xzf biber-linux_x86_64.tar.gz
-- export PATH=$PATH:$PWD
-- tlmgr update biber
-script:
-- Rscript -e "knitr::knit('Example.Rnw')"
-- pdflatex -draftmode Example.tex
-- biber Example
-- Rscript CheckBiber.R
-- pdflatex -draftmode Example.tex
->>>>>>> 1841de90cad637c4f949c334560b2f10e7e729f1
 deploy:
   provider: releases
   api_key:
