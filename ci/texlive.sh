@@ -83,7 +83,8 @@ tlmgr install   \
   xcolor        \
   xecjk         \
   zhmetrics     \
-  zhnumber
+  zhnumber		\
+  polyglossia
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
