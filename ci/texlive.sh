@@ -84,7 +84,8 @@ tlmgr install   \
   xecjk         \
   zhmetrics     \
   zhnumber		\
-  polyglossia
+  polyglossia	\
+  tabto-ltx
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
