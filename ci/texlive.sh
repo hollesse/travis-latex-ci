@@ -88,7 +88,8 @@ tlmgr install   \
   tabto-ltx		\
   xhfill		\
   was			\
-  supertabular
+  supertabular	\
+  pgfplots
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
