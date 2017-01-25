@@ -42,7 +42,7 @@ deploy:
   file: _build/main.pdf
   skip_cleanup: true
   on:
-    repo: hollesse/Report-Template
+    repo: hollesse/travis-latex-ci
 
 notifications:
   email: false
