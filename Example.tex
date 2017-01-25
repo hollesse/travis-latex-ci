@@ -1,16 +1,17 @@
-\documentclass{myclass}
-
-\title{(my title)}
-\Subtitle{my subtitle}
-\author{me}
-
-\GrattanWorkingPaperNumber{x}
-\acknowledgements{a}
-
-\usepackage{blindtext}
-
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
 \begin{document}
-
-\blinddocument 
-
+\section{Überschrift}
+\subsection{Unterüberschrift}
+Plain text.
+\subsection{HALLO}
+More plain text.
+\subsection{Listing}
+\begin{lstlisting}[language=Java,frame=shadowbox,rulesepcolor=\color{black}]
+	System.out.println("Hallo Welt")
+\end{lstlisting}
+\input{content/content}
 \end{document}
