@@ -23,7 +23,6 @@ before_script:
     - tlmgr update biber
 
 script: 
-  - Rscript -e "knitr::knit('Example.Rnw')"
   - pdflatex Example.tex
   - biber Example
   - Rscript CheckBiber.R
