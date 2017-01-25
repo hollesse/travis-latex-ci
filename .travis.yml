@@ -1,24 +1,21 @@
 language: r
-
 sudo: true
-cache: 
-  - packages
-  - /tmp/texlive
-  - /$HOME/.texlive
+cache:
+- packages
+- "/tmp/texlive"
+- "/$HOME/.texlive"
 warnings_are_errors: false
-
-
 before_install:
-  - source ./source/texlive.sh
-  - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch
-  - tlmgr update --all
-  - sudo apt-get update
-  - sudo apt-get install texlive-bibtex-extra
-  - Rscript -e "if (!requireNamespace('knitr')) install.packages('knitr')"
-
-install: echo Installation step #do not remove this line!
-
+- source ./source/texlive.sh
+- tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator
+  needspace tablefootnote tocloft xpatch
+- tlmgr update --all
+- sudo apt-get update
+- sudo apt-get install texlive-bibtex-extra
+- Rscript -e "if (!requireNamespace('knitr')) install.packages('knitr')"
+install: echo Installation step
 before_script:
+<<<<<<< HEAD
     # as somehow no biber package is available for ubuntu 12.04 via apt, let's just download it directly
     # - wget "http://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/0.9.9/binaries/Linux/biber-linux_x86_64.tar.gz"
     - wget "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/Linux/biber-linux_x86_64.tar.gz"
@@ -35,14 +32,24 @@ script:
 
 
 #after_success: tools/deploy.sh
+=======
+- wget "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/Linux/biber-linux_x86_64.tar.gz"
+- tar xzf biber-linux_x86_64.tar.gz
+- export PATH=$PATH:$PWD
+- tlmgr update biber
+script:
+- Rscript -e "knitr::knit('Example.Rnw')"
+- pdflatex -draftmode Example.tex
+- biber Example
+- Rscript CheckBiber.R
+- pdflatex -draftmode Example.tex
+>>>>>>> 1841de90cad637c4f949c334560b2f10e7e729f1
 deploy:
   provider: releases
   api_key:
-    secure: fVygwJ4d9AiJvGMoE5M4w0maloEaEXJ7qUf6668ndVQxbUD4VIfI+SGfDj6azF0bic0oKVjkXW98kdvfbeod1bgPsALQsV3nJZyZndYVt0CV+HLv1F5hBAEvq9kWPvFzaSOWtA2IcqEeAINIV5Aht0c5S6Imnwo0gbtEKfYCzghJoPfnuq+VuJzDvIFG77HXNpk947SdBP8aa1KCYkzw8A4+WfZobWBaMOFb2JS3Iq+eP7w2af/etV1H6isygTSlzLqmnNPkeeld+ONFwy3RopMGry/o3+ADMTuCJgUlFLrTGk+iPM5epeEwGOnp8nc5HcVOJ8jggUo+Dz72TvHE67uCmt608T4p2IPyKkzX4qg91ogOm8JwWLd8QJrG8WckOWq/pqJUD4UAncxOqBoXDJkLJZ7rWX5Epn2XRXHk7odRvLy0rzDJMRiE3QLY4+BAxfCabKB2GgQ7ftfWXArfCJkg258Hg/W39Su8weT57FENnpISiRwxSkvtvwa4YmWkJZT4dKhXQ5nF7Nybnxuq/NcBlLtVFLdWNhLsrjeo4AnUxsT4qXvHaOzc5hEaBIKNPN70jun2ikTt1r/SRLOan8oTL9AUsDNXdv4Tx3+SfqJBpbRS3r8C6tXmZPob4xwf/kMdT/KXfgTkmUfMSNgxZ3sIZkJFI2V+T3NvOr0yohA=
+    secure: Ph4ZHMQr4QpU0D6QhEmRdV8a1axmzzwovzPsTt44gF97Hyb5Zuvx5eFre/U0fjFI4iB4c33sSXwzWjsm4OUYw4yIpTj4FLk2Ix1RC14FoqS6nLWrJoQzFBczz78PJbpyF8rR4A7QQoBFcOD6IMd2Je7uTW/5IOP6U1WaOMHNqI1hbdZedgWUoxXjqWU/2Mv4M72dLlImCy5oJnoOYstTTaPrMOwIZTaOYEC97M/gXRpnPr5mr89f9VOmwc/AGYP3SeZmEfv1w9P7t8ys/kxVh4Cvgyw3oQDgW823/aJV0clCKqAXF4+kFddSu5Uoru2/T2xaYAfE3jrDb82mv7b8M29yhhixXl2T/gpXd0fWgoBT5lsYivyiIWNYsz7sQHHCIGj9NeZAGKqS+VY9EmwVS3Is7c39ws5MzWSJ8V0GYuYbhi0M0nnARyU/Z1EMNlxjperYP11xpwXCUCfKoI7h+7Dht/3UfHX3i2oPJGOIOFj51XKI8pbvkUR/c5TmdssDwlS8tN2CAq4VltcB4g635XbSLBg9kcWKuLuuLyIxXCleBSMDi+PqKqVvhKYoc0pyFrwYyxWQvkN5WaoVRIkp+xp/OVkNZz/Zn/s9xjoV4WGDAmQ5ofr1w8VCqqOAy6HXEaozLE0wzdBiQn0FpM6+7LowTVVRKqC7ffaAb1owGYY=
   file: Example.pdf
-  skip_cleanup: true
   on:
     repo: hollesse/travis-latex-ci
-
 notifications:
   email: false
