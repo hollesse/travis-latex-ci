@@ -29,8 +29,8 @@ tlmgr install cm etex knuth-lib latex-bin tex tex-ini-files unicode-data \
   
 # Additional requirements for (u)pLaTeX, done with no dependencies to
 # avoid large font payloads
-tlmgr install --no-depends babel ptex uptex ptex-base uptex-base ptex-fonts \
-  uptex-fonts platex uplatex
+#tlmgr install --no-depends babel ptex uptex ptex-base uptex-base ptex-fonts \
+ # uptex-fonts platex uplatex
 
 # Assuming a 'basic' font set up, metafont is required to avoid
 # warnings with some packages and errors with others
