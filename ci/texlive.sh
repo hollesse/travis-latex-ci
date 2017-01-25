@@ -86,7 +86,7 @@ tlmgr install   \
   zhnumber		\
   polyglossia	\
   tabto-ltx		\
-  xh­fill
+  xhfill
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
