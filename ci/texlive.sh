@@ -91,7 +91,9 @@ tlmgr install   \
   supertabular	\
   pgfplots		\
   optional		\
-  fontawesome
+  fontawesome	\
+  babel			\
+  german
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
