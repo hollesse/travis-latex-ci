@@ -38,5 +38,6 @@ deploy:
   skip_cleanup: true
   on:
     repo: hollesse/travis-latex-ci
+    tags: true
 notifications:
   email: false
