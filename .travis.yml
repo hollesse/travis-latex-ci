@@ -21,7 +21,7 @@ before_script:
     - tar xzf biber-linux_x86_64.tar.gz
     - export PATH=$PATH:$PWD
     - tlmgr update biber
-    - ./ci/replaceumlaute.sh
+    - bash ./ci/replaceumlaute.sh
 
 script: 
   - xelatex Example.tex
