@@ -25,10 +25,10 @@
 #replaceUmlaute bib userdata\/ExampleContent\/content\/resources\/
 
 
-sed -i 's_ä_\{\\"a\}_g' *.tex 
-sed -i 's;Ä;\{\\"A\};g' *.tex
-sed -i 's;ö;\{\\"o\};g' *.tex
-sed -i 's;Ö;\{\\"O\};g' *.tex
-sed -i 's;ü;\{\\"u\};g' *.tex
-sed -i 's;Ü;\{\\"U\};g' *.tex
-sed -i 's;ß;\{\\ss\};g' *.tex
+sed -i 's;ä;{\\"a};g' *.tex 
+sed -i 's;Ä;{\\"A};g' *.tex
+sed -i 's;ö;{\\"o};g' *.tex
+sed -i 's;Ö;{\\"O};g' *.tex
+sed -i 's;ü;{\\"u};g' *.tex
+sed -i 's;Ü;{\\"U};g' *.tex
+sed -i 's;ß;{\\ss};g' *.tex
