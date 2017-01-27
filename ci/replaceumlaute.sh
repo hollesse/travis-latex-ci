@@ -16,10 +16,10 @@ replaceUmlaute() {
     sed -i 's;ß;{\\ss};g' $2.$1
 }
 
-replaceUmlaute tex *
-replaceUmlaute tex template/
-replaceUmlaute tex userdata/
-replaceUmlaute tex userdata/lib/listing/
-replaceUmlaute tex userdata/ExampleContent/content/
-replaceUmlaute tex userdata/ExampleContent/content/chapters/
-replaceUmlaute bib userdata/ExampleContent/content/resources/
+replaceUmlaute tex \*
+replaceUmlaute tex template\/
+replaceUmlaute tex userdata\/
+replaceUmlaute tex userdata\/lib\/listing\/
+replaceUmlaute tex userdata\/ExampleContent\/content\/
+replaceUmlaute tex userdata\/ExampleContent\/content\/chapters\/
+replaceUmlaute bib userdata\/ExampleContent\/content\/resources\/
