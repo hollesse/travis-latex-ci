@@ -7,16 +7,16 @@
 
 
 replaceUmlaute() {
-    sed -i 's;ä;{\\"a};g' $2*.$1 
-    sed -i 's;Ä;{\\"A};g' $2*.$1
-    sed -i 's;ö;{\\"o};g' $2*.$1
-    sed -i 's;Ö;{\\"O};g' $2*.$1
-    sed -i 's;ü;{\\"u};g' $2*.$1
-    sed -i 's;Ü;{\\"U};g' $2*.$1
-    sed -i 's;ß;{\\ss};g' $2*.$1
+    sed -i 's;ä;{\\"a};g' $2.$1 
+    sed -i 's;Ä;{\\"A};g' $2.$1
+    sed -i 's;ö;{\\"o};g' $2.$1
+    sed -i 's;Ö;{\\"O};g' $2.$1
+    sed -i 's;ü;{\\"u};g' $2.$1
+    sed -i 's;Ü;{\\"U};g' $2.$1
+    sed -i 's;ß;{\\ss};g' $2.$1
 }
 
-replaceUmlaute tex 
+replaceUmlaute tex *
 replaceUmlaute tex template/
 replaceUmlaute tex userdata/
 replaceUmlaute tex userdata/lib/listing/
