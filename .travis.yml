@@ -22,7 +22,7 @@ before_script:
     - export PATH=$PATH:$PWD
     - tlmgr update biber
     #- Rscript ./ci/replaceumlaute.R
-    #- bash ./ci/replaceumlaute.sh
+    - bash ./ci/replaceumlaute.sh
 
 script: 
   - xelatex Example.tex
