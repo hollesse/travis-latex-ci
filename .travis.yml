@@ -1,4 +1,4 @@
-language: r
+#language: r
 sudo: true
 cache:
 - packages
@@ -21,7 +21,7 @@ before_script:
     - tar xzf biber-linux_x86_64.tar.gz
     - export PATH=$PATH:$PWD
     - tlmgr update biber
-    - Rscript ./ci/replaceumlaute.R
+    #- Rscript ./ci/replaceumlaute.R
     #- bash ./ci/replaceumlaute.sh
 
 script: 
