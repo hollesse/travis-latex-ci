@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-sed -i -- 's/ö/Alex/g' userdata/*.tex
+sed -i -- 's;Max;Alex;g' userdata/*.tex
