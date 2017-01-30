@@ -19,4 +19,4 @@ replaceUmlauteBib() {
     replaceUmlaute $1 bib
 }
 
-replaceUmlauteTex /userdata/
+replaceUmlauteTex userdata/
