@@ -7,7 +7,7 @@ replaceUmlaute(){
   sed -i -- 's;Ã„;Ae;g' $1*.$2 # Ä
   sed -i -- 's;Ã¼;ue;g' $1*.$2 # ü
   sed -i -- 's;Ãœ;Ue;g' $1*.$2 # Ü
-  sed -i -- 's;ÃŸ;\\\{ss\};g' $1*.$2 # ß
+  sed -i -- 's;ÃŸ;\{\\ss\};g' $1*.$2 # ß
 }
 
 
