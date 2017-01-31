@@ -19,4 +19,9 @@ replaceUmlauteBib() {
     replaceUmlaute $1 bib
 }
 
+replaceUmlauteTex template/
 replaceUmlauteTex userdata/
+replaceUmlauteTex userdata/lib/listing/
+replaceUmlauteTex userdata/ExampleContent/content/
+replaceUmlauteTex userdata/ExampleContent/content/chapters/
+replaceUmlauteBib userdata/ExampleContent/resources/
